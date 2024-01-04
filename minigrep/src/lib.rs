@@ -1,11 +1,11 @@
 use std::env;
-use std::fs;
 use std::error::Error;
+use std::fs;
 
 pub struct Config {
     pub query: String,
     pub file_path: String,
-    pub ignore_case: bool
+    pub ignore_case: bool,
 }
 
 impl Config {
@@ -13,12 +13,24 @@ impl Config {
         if args.len() < 3 {
             return Err("Not enough arguments");
         }
+
         let query = args[1].clone();
         let file_path = args[2].clone();
 
-        let ignore_case = env::var("IGNORE_CASE").is_ok();
+        let mut ignore_case = env::var("IGNORE_CASE").is_ok();
 
-        Ok(Config { query, file_path, ignore_case })
+        if args.len() > 3 {
+            let case: Option<String> = Option::from(args[3].clone());
+            if case.unwrap() == "IGNORE_CASE" && ignore_case == false {
+                ignore_case = true;
+            }
+        }
+
+        Ok(Config {
+            query,
+            file_path,
+            ignore_case,
+        })
     }
 }
 
