@@ -24,6 +24,8 @@
       <sourceFolder url="file://$MODULE_DIR$/adder/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/minigrep/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/closures/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/advent_of_code/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/smart_pointers/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables/target" />
@@ -45,6 +47,8 @@
       <excludeFolder url="file://$MODULE_DIR$/adder/target" />
       <excludeFolder url="file://$MODULE_DIR$/minigrep/target" />
       <excludeFolder url="file://$MODULE_DIR$/closures/target" />
+      <excludeFolder url="file://$MODULE_DIR$/advent_of_code/target" />
+      <excludeFolder url="file://$MODULE_DIR$/smart_pointers/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
