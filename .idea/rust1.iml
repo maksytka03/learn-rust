@@ -26,6 +26,10 @@
       <sourceFolder url="file://$MODULE_DIR$/closures/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/advent_of_code/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/smart_pointers/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/process/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspaces/add/add_one/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspaces/add/adder/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspaces/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables/target" />
@@ -49,6 +53,8 @@
       <excludeFolder url="file://$MODULE_DIR$/closures/target" />
       <excludeFolder url="file://$MODULE_DIR$/advent_of_code/target" />
       <excludeFolder url="file://$MODULE_DIR$/smart_pointers/target" />
+      <excludeFolder url="file://$MODULE_DIR$/process/target" />
+      <excludeFolder url="file://$MODULE_DIR$/workspaces/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

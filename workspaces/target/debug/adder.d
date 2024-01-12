@@ -1,0 +1,1 @@
+C:\Users\Pavlo\RustroverProjects\rust1\workspaces\target\debug\adder.exe: C:\Users\Pavlo\RustroverProjects\rust1\workspaces\add\add_one\src\lib.rs C:\Users\Pavlo\RustroverProjects\rust1\workspaces\add\adder\src\main.rs

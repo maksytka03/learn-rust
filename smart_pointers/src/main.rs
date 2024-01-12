@@ -38,3 +38,4 @@ fn main() {
     assert_eq!(5, x);
     assert_eq!(5, *y)
 }
+
