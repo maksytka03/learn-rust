@@ -1,29 +1,24 @@
-use std::sync::mpsc;
+use std::sync::mpsc; // can only have one receiver of messages but multiple producers.
 use std::thread;
-use std::time::Duration;
 
 fn main() {
-    let (tx, rx) = mpsc::channel(); // transmitter, receiver
-
+    let (tx, rx) = mpsc::channel();
     let tx2 = tx.clone();
 
     thread::spawn(move || {
-        // move because it's unsafe to share the sender between threads
         let vals = vec![
-            String::from("hi"),
+            String::from("Hi"),
             String::from("from"),
             String::from("the"),
             String::from("thread"),
         ];
 
         for val in vals {
-            tx.send(val).unwrap(); // returns result
-            thread::sleep(Duration::from_secs(1));
+            tx.send(val).unwrap(); // can panic, so we use unwrap to get the error if there is one.
         }
     });
 
     thread::spawn(move || {
-        // move because it's unsafe to share the sender between threads
         let vals = vec![
             String::from("more"),
             String::from("messages"),
@@ -32,16 +27,16 @@ fn main() {
         ];
 
         for val in vals {
-            tx2.send(val).unwrap(); // returns result
-            thread::sleep(Duration::from_secs(1));
+            tx2.send(val).unwrap(); // can panic, so we use unwrap to get the error if there is one.
         }
     });
 
-    //let received = rx.recv().unwrap(); // can also use try_recv() which won't block the main thread's execution and return a result type immediately.
-
+    //let received = rx.recv().unwrap(); // recv blocks the main thread's execution while waiting for
+    // value; can use try_recv if want to do other work while
+    // waiting
     for received in rx {
-        // not calling recv(), treating rx as an iterator
-        println!("Got: {:?}", received);
+        // treat rx as an iterator in this case
+        println!("Got: {}", received);
     }
 }
 
