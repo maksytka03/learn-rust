@@ -22,7 +22,7 @@ pub struct Button {
 
 impl Draw for Button {
     fn draw(&self) {
-        // draw button
+        // code to actually draw a button
     }
 }
 

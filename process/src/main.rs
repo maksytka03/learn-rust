@@ -13,5 +13,12 @@ fn main() {
     }
     let e = now.elapsed();
     println!("{:?}", e);
-}
 
+    println!("-------------\n");
+
+    let s = String::from("NOGOISGO:IDSGDFIOGHDG");
+
+    for i in 0..2 {
+        println!("{}", s.chars().nth(i).unwrap())
+    }
+}

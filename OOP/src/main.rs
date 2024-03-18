@@ -1,4 +1,4 @@
-use oop::{Button, Draw, Screen};
+use oop::Draw;
 
 struct SelectBox {
     width: u32,
@@ -8,26 +8,31 @@ struct SelectBox {
 
 impl Draw for SelectBox {
     fn draw(&self) {
-        // draw select box
+        // code to actually draw a select box
     }
 }
+
+use oop::{Button, Screen};
 
 fn main() {
     let screen = Screen {
         components: vec![
-            Box::new(String::from("test")),
             Box::new(SelectBox {
-                width: 100,
-                height: 100,
-                options: vec![String::from("yes"), String::from("no")],
+                width: 75,
+                height: 10,
+                options: vec![
+                    String::from("Yes"),
+                    String::from("Maybe"),
+                    String::from("No"),
+                ],
             }),
             Box::new(Button {
-                width: 100,
-                height: 100,
-                label: String::from("ok"),
+                width: 50,
+                height: 10,
+                label: String::from("OK"),
             }),
         ],
     };
 
-    screen.run()
+    screen.run();
 }
