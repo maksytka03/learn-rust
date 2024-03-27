@@ -1,0 +1,1 @@
+{"rustc":3463790191383208604,"features":"[\"errhandlingapi\", \"libloaderapi\"]","target":9748967041901240142,"profile":1029658582868949102,"path":31442065319258929,"deps":[[11200738327577307306,"build_script_build",false,9101760121015667793]],"local":[{"Precalculated":"0.3.9"}],"rustflags":[],"metadata":16266002775178098827,"config":2202906307356721367,"compile_kind":0}

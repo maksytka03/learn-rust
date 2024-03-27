@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["glsl","opengl"],"struct":["Shaders"],"trait":["PickShader"]};

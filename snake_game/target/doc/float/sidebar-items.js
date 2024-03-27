@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"trait":["Cast","Float","FromPrimitive","Max","Min","One","Powf","Radians","Signum","Sqrt","Trig","Zero"]};

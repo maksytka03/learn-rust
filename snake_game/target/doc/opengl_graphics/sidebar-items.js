@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Filter","Format","GLSL","OpenGL","Wrap"],"mod":["error","ops","shader_uniforms","shader_utils"],"struct":["Colored","GlGraphics","Shaders","Texture","TextureSettings","Textured"],"trait":["CreateTexture","ImageSize","TextureOp","UpdateTexture"],"type":["GlyphCache"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["SUFloat","SUInt","SUMat2x2","SUMat3x3","SUMat4x4","SUVec2","SUVec3","SUVec4","ShaderUniform"],"trait":["UniformType"]};

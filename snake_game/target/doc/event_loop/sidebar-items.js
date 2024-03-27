@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DEFAULT_MAX_FPS","DEFAULT_UPS","DEFAULT_UPS_RESET"],"struct":["EventSettings","Events"],"trait":["EventLoop"]};
