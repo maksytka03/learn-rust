@@ -10,7 +10,6 @@ use opengl_graphics::{GlGraphics, OpenGL};
 use piston::event_loop::*;
 use piston::input::*;
 use piston::window::WindowSettings;
-use rand::random;
 use std::collections::LinkedList;
 
 #[derive(Clone, PartialEq)]
@@ -64,12 +63,33 @@ impl Game {
 
     fn pressed(&mut self, btn: &Button) {
         let last_direction = self.snake.dir.clone();
+        let body = &self.snake.body;
 
         self.snake.dir = match btn {
-            &Button::Keyboard(Key::Up) if last_direction != Direction::Down => Direction::Up,
-            &Button::Keyboard(Key::Down) if last_direction != Direction::Up => Direction::Down,
-            &Button::Keyboard(Key::Right) if last_direction != Direction::Left => Direction::Right,
-            &Button::Keyboard(Key::Left) if last_direction != Direction::Right => Direction::Left,
+            &Button::Keyboard(Key::Up)
+                if last_direction != Direction::Down
+                    && body.front().unwrap().clone().1 == body.iter().nth(1).unwrap().clone().1 =>
+            {
+                Direction::Up
+            }
+            &Button::Keyboard(Key::Down)
+                if last_direction != Direction::Up
+                    && body.front().unwrap().clone().1 == body.iter().nth(1).unwrap().clone().1 =>
+            {
+                Direction::Down
+            }
+            &Button::Keyboard(Key::Right)
+                if last_direction != Direction::Left
+                    && body.front().unwrap().clone().0 == body.iter().nth(1).unwrap().clone().0 =>
+            {
+                Direction::Right
+            }
+            &Button::Keyboard(Key::Left)
+                if last_direction != Direction::Right
+                    && body.front().unwrap().clone().0 == body.iter().nth(1).unwrap().clone().0 =>
+            {
+                Direction::Left
+            }
             _ => last_direction,
         };
     }
