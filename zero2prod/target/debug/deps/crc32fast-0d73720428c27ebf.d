@@ -1,0 +1,10 @@
+c:\Users\Pavlo\RustroverProjects\rust1\zero2prod\target\debug\deps\libcrc32fast-0d73720428c27ebf.rmeta: C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\lib.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\baseline.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\combine.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\mod.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\table.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\pclmulqdq.rs
+
+c:\Users\Pavlo\RustroverProjects\rust1\zero2prod\target\debug\deps\crc32fast-0d73720428c27ebf.d: C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\lib.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\baseline.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\combine.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\mod.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\table.rs C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\pclmulqdq.rs
+
+C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\lib.rs:
+C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\baseline.rs:
+C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\combine.rs:
+C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\mod.rs:
+C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\table.rs:
+C:\Users\Pavlo\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\pclmulqdq.rs:

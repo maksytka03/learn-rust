@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["char_to_hex","hex","hex_pair","rgb","rgb_maybe_a","rgba"]};

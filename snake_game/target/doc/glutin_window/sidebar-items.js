@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["OpenGL","UserEvent"],"fn":["map_key","map_mouse"],"struct":["GlutinWindow"]};

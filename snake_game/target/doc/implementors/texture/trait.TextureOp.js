@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"opengl_graphics":[["impl <a class=\"trait\" href=\"opengl_graphics/trait.TextureOp.html\" title=\"trait opengl_graphics::TextureOp\">TextureOp</a>&lt;<a class=\"primitive\" href=\"https://doc.rust-lang.org/1.73.0/std/primitive.unit.html\">()</a>&gt; for <a class=\"struct\" href=\"opengl_graphics/struct.Texture.html\" title=\"struct opengl_graphics::Texture\">Texture</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

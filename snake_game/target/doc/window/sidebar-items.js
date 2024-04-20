@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Api","NoWindow","Position","Size","UnsupportedGraphicsApiError","WindowSettings"],"trait":["AdvancedWindow","BuildFromWindowSettings","OpenGLWindow","Window"],"type":["ProcAddress"]};

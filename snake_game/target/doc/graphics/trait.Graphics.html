@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Implemented by all graphics back-ends."><title>Graphics in graphics - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-cb6f1f67f1bcd037.css" id="mainThemeStyle"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="graphics" data-themes="" data-resource-suffix="" data-rustdoc-version="1.73.0 (cc66ad468 2023-10-03)" data-channel="1.73.0" data-search-js="search-6dfdfced5eff6596.js" data-settings-js="settings-de11bff964e9d4e5.js" data-settings-css="settings-8c76f75bfb6bd192.css" data-theme-light-css="light-1596385f77d47ef2.css" data-theme-dark-css="dark-0a43001d3fc2282c.css" data-theme-ayu-css="ayu-fd19013d6ce078bf.css" ><script src="../static.files/storage-db41da1a38ea3cb8.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-0795b7d26be81095.js"></script><noscript><link rel="stylesheet" media="(prefers-color-scheme:light)" href="../static.files/light-1596385f77d47ef2.css"><link rel="stylesheet" media="(prefers-color-scheme:dark)" href="../static.files/dark-0a43001d3fc2282c.css"><link rel="stylesheet" href="../static.files/noscript-cffde32267a19fd6.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="logo-container" href="../graphics/index.html"><img class="rust-logo" src="../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><h2></h2></nav><nav class="sidebar"><a class="logo-container" href="../graphics/index.html"><img class="rust-logo" src="../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><h2 class="location"><a href="#">Graphics</a></h2><div class="sidebar-elems"><section><h3><a href="#required-associated-types">Required Associated Types</a></h3><ul class="block"><li><a href="#associatedtype.Texture">Texture</a></li></ul><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.clear_color">clear_color</a></li><li><a href="#tymethod.clear_stencil">clear_stencil</a></li><li><a href="#tymethod.tri_list">tri_list</a></li><li><a href="#tymethod.tri_list_c">tri_list_c</a></li><li><a href="#tymethod.tri_list_uv">tri_list_uv</a></li><li><a href="#tymethod.tri_list_uv_c">tri_list_uv_c</a></li></ul><h3><a href="#provided-methods">Provided Methods</a></h3><ul class="block"><li><a href="#method.circle_arc">circle_arc</a></li><li><a href="#method.ellipse">ellipse</a></li><li><a href="#method.image">image</a></li><li><a href="#method.line">line</a></li><li><a href="#method.polygon">polygon</a></li><li><a href="#method.polygon_tween_lerp">polygon_tween_lerp</a></li><li><a href="#method.rectangle">rectangle</a></li></ul><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In graphics</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="index.html">graphics</a>::<wbr><a class="trait" href="#">Graphics</a><button id="copy-path" title="Copy item path to clipboard"><img src="../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="src" href="../src/graphics/graphics.rs.html#36-251">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait Graphics: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> {
+    type <a href="#associatedtype.Texture" class="associatedtype">Texture</a>: <a class="trait" href="trait.ImageSize.html" title="trait graphics::ImageSize">ImageSize</a>;
+
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 13 methods</span></summary>    // Required methods
+    fn <a href="#tymethod.clear_color" class="fn">clear_color</a>(&amp;mut self, color: <a class="type" href="types/type.Color.html" title="type graphics::types::Color">Color</a>);
+<span class="item-spacer"></span>    fn <a href="#tymethod.clear_stencil" class="fn">clear_stencil</a>(&amp;mut self, value: <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.u8.html">u8</a>);
+<span class="item-spacer"></span>    fn <a href="#tymethod.tri_list" class="fn">tri_list</a>&lt;F&gt;(&amp;mut self, draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>, color: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>], f: F)
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]]))</span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.tri_list_c" class="fn">tri_list_c</a>&lt;F&gt;(&amp;mut self, draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>, f: F)
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>]]))</span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.tri_list_uv" class="fn">tri_list_uv</a>&lt;F&gt;(
+        &amp;mut self,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        color: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>],
+        texture: &amp;&lt;Self as <a class="trait" href="trait.Graphics.html" title="trait graphics::Graphics">Graphics</a>&gt;::<a class="associatedtype" href="trait.Graphics.html#associatedtype.Texture" title="type graphics::Graphics::Texture">Texture</a>,
+        f: F
+    )
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]]))</span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.tri_list_uv_c" class="fn">tri_list_uv_c</a>&lt;F&gt;(
+        &amp;mut self,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        texture: &amp;&lt;Self as <a class="trait" href="trait.Graphics.html" title="trait graphics::Graphics">Graphics</a>&gt;::<a class="associatedtype" href="trait.Graphics.html#associatedtype.Texture" title="type graphics::Graphics::Texture">Texture</a>,
+        f: F
+    )
+       <span class="where">where F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>]]))</span>;
+
+    // Provided methods
+    fn <a href="#method.rectangle" class="fn">rectangle</a>&lt;R: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Rectangle.html" title="type graphics::types::Rectangle">Rectangle</a>&gt;&gt;(
+        &amp;mut self,
+        r: &amp;<a class="struct" href="rectangle/struct.Rectangle.html" title="struct graphics::rectangle::Rectangle">Rectangle</a>,
+        rectangle: R,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+<span class="item-spacer"></span>    fn <a href="#method.polygon" class="fn">polygon</a>(
+        &amp;mut self,
+        p: &amp;<a class="struct" href="polygon/struct.Polygon.html" title="struct graphics::polygon::Polygon">Polygon</a>,
+        polygon: <a class="type" href="types/type.Polygon.html" title="type graphics::types::Polygon">Polygon</a>&lt;'_&gt;,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+<span class="item-spacer"></span>    fn <a href="#method.polygon_tween_lerp" class="fn">polygon_tween_lerp</a>(
+        &amp;mut self,
+        p: &amp;<a class="struct" href="polygon/struct.Polygon.html" title="struct graphics::polygon::Polygon">Polygon</a>,
+        polygons: <a class="type" href="types/type.Polygons.html" title="type graphics::types::Polygons">Polygons</a>&lt;'_&gt;,
+        tween_factor: <a class="type" href="math/type.Scalar.html" title="type graphics::math::Scalar">Scalar</a>,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+<span class="item-spacer"></span>    fn <a href="#method.image" class="fn">image</a>(
+        &amp;mut self,
+        image: &amp;<a class="struct" href="image/struct.Image.html" title="struct graphics::image::Image">Image</a>,
+        texture: &amp;Self::<a class="associatedtype" href="trait.Graphics.html#associatedtype.Texture" title="type graphics::Graphics::Texture">Texture</a>,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+<span class="item-spacer"></span>    fn <a href="#method.ellipse" class="fn">ellipse</a>&lt;R: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Rectangle.html" title="type graphics::types::Rectangle">Rectangle</a>&gt;&gt;(
+        &amp;mut self,
+        e: &amp;<a class="struct" href="ellipse/struct.Ellipse.html" title="struct graphics::ellipse::Ellipse">Ellipse</a>,
+        rectangle: R,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+<span class="item-spacer"></span>    fn <a href="#method.line" class="fn">line</a>&lt;L: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Line.html" title="type graphics::types::Line">Line</a>&gt;&gt;(
+        &amp;mut self,
+        l: &amp;<a class="struct" href="line/struct.Line.html" title="struct graphics::line::Line">Line</a>,
+        line: L,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+<span class="item-spacer"></span>    fn <a href="#method.circle_arc" class="fn">circle_arc</a>&lt;R: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Rectangle.html" title="type graphics::types::Rectangle">Rectangle</a>&gt;&gt;(
+        &amp;mut self,
+        c: &amp;<a class="struct" href="circle_arc/struct.CircleArc.html" title="struct graphics::circle_arc::CircleArc">CircleArc</a>,
+        rectangle: R,
+        draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+        transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+    ) { ... }
+</details>}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Implemented by all graphics back-ends.</p>
+<p><a href="https://github.com/PistonDevelopers/opengl_graphics">An example back-end using raw OpenGL</a></p>
+<p>By default, this design uses triangles as graphics primitives.
+This is supported by all GPUs and easy to implement in shader languages.</p>
+<p>Default trait methods can be overridden for better performance or higher
+quality.</p>
+<p>When drawing, use this trait as generic constraint:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>graphics::{Context, Graphics};
+
+<span class="kw">fn </span>draw&lt;G: Graphics&gt;(c: <span class="kw-2">&amp;</span>Context, g: <span class="kw-2">&amp;mut </span>G) {
+    <span class="comment">//...
+</span>}</code></pre></div>
+<p>Color space is sRGB.</p>
+<h4 id="notice-for-back-end-authors"><a href="#notice-for-back-end-authors">Notice for back-end authors</a></h4>
+<p>When sRGB is enabled for a back-end shader, the gamma must be converted
+to linear space when used as vertex color or uniform parameter.
+To convert gamma, use <code>color::gamma_srgb_to_linear</code>.</p>
+<p>For more information, see
+https://github.com/PistonDevelopers/piston/issues/1014.</p>
+</div></details><h2 id="required-associated-types" class="small-section-header">Required Associated Types<a href="#required-associated-types" class="anchor">§</a></h2><div class="methods"><details class="toggle" open><summary><section id="associatedtype.Texture" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#56">source</a><h4 class="code-header">type <a href="#associatedtype.Texture" class="associatedtype">Texture</a>: <a class="trait" href="trait.ImageSize.html" title="trait graphics::ImageSize">ImageSize</a></h4></section></summary><div class="docblock"><p>The texture type associated with the back-end.</p>
+<p>In generic code, this type is often unknown.
+This might lead to more boilerplate code:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>graphics::{Context, Graphics, ImageSize};
+
+<span class="kw">fn </span>draw_texture&lt;G, T&gt;(c: <span class="kw-2">&amp;</span>Context, g: <span class="kw-2">&amp;mut </span>G)
+<span class="kw">where
+    </span>G: Graphics&lt;Texture = T&gt;,
+    T: ImageSize,
+{
+    <span class="comment">//...
+</span>}</code></pre></div>
+<p>Code written specifically for one back-end can be easier to write.
+Later, when the code is done, it can be refactored into generic code.</p>
+</div></details></div><h2 id="required-methods" class="small-section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.clear_color" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#63">source</a><h4 class="code-header">fn <a href="#tymethod.clear_color" class="fn">clear_color</a>(&amp;mut self, color: <a class="type" href="types/type.Color.html" title="type graphics::types::Color">Color</a>)</h4></section></summary><div class="docblock"><p>Clears background with a color.</p>
+<p>The color should replace the values in the buffer.</p>
+<p>Color space is sRGB.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.clear_stencil" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#73">source</a><h4 class="code-header">fn <a href="#tymethod.clear_stencil" class="fn">clear_stencil</a>(&amp;mut self, value: <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.u8.html">u8</a>)</h4></section></summary><div class="docblock"><p>Clears stencil buffer with a value, usually 0.</p>
+<p>A stencil buffer contains values that are not visible on the screen.
+These values are used to test against the pixel to paint.</p>
+<p>If you are drawing a shape for clipping and forgot to clear the
+stencil buffer, then the clipping shape will carry over in next frame
+and cause artifacts.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.tri_list" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#87-89">source</a><h4 class="code-header">fn <a href="#tymethod.tri_list" class="fn">tri_list</a>&lt;F&gt;(&amp;mut self, draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>, color: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>], f: F)<span class="where fmt-newline">where
+    F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]])),</span></h4></section></summary><div class="docblock"><p>Renders list of 2d triangles using a solid color.</p>
+<p>All vertices share the same color.</p>
+<p>The back-end calls the closure with a closure to receive vertices.
+First, the back-end sets up shaders and such to prepare.
+Then it calls the closure, which calls back with chunks of vertices.
+The number of vertices per chunk never exceeds
+<code>BACK_END_MAX_VERTEX_COUNT</code>.
+Vertex positions are encoded <code>[[x0, y0], [x1, y1], ...]</code>.</p>
+<p>Color space is sRGB.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.tri_list_c" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#94-96">source</a><h4 class="code-header">fn <a href="#tymethod.tri_list_c" class="fn">tri_list_c</a>&lt;F&gt;(&amp;mut self, draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>, f: F)<span class="where fmt-newline">where
+    F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>]])),</span></h4></section></summary><div class="docblock"><p>Same as <code>tri_list</code>, but with individual vertex colors.</p>
+<p>Argument are <code>|vertices: &amp;[[f32; 2], colors: &amp;[[f32; 4]]]|</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.tri_list_uv" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#119-126">source</a><h4 class="code-header">fn <a href="#tymethod.tri_list_uv" class="fn">tri_list_uv</a>&lt;F&gt;(
+    &amp;mut self,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    color: &amp;[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>],
+    texture: &amp;&lt;Self as <a class="trait" href="trait.Graphics.html" title="trait graphics::Graphics">Graphics</a>&gt;::<a class="associatedtype" href="trait.Graphics.html#associatedtype.Texture" title="type graphics::Graphics::Texture">Texture</a>,
+    f: F
+)<span class="where fmt-newline">where
+    F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]])),</span></h4></section></summary><div class="docblock"><p>Renders list of 2d triangles using a color and a texture.</p>
+<p>All vertices share the same color.</p>
+<p>Tip: For objects of different colors, use grayscale textures.
+The texture color gets multiplied with the color.</p>
+<p>A texture coordinate is assigned per vertex (from [0, 0] to [1, 1]).</p>
+<p>The back-end calls the closure with a closure to receive vertices.
+First, the back-end sets up shaders and such to prepare.
+Then it calls the closure, which calls back with chunks of vertices.
+The number of vertices per chunk never exceeds
+<code>BACK_END_MAX_VERTEX_COUNT</code>.
+Vertex positions are encoded <code>[[x0, y0], [x1, y1], ...]</code>.
+Texture coordinates are encoded <code>[[u0, v0], [u1, v1], ...]</code>.</p>
+<p>Chunks uses separate buffer for vertex positions and texture coordinates.
+Arguments are <code>|vertices: &amp;[[f32; 2]], texture_coords: &amp;[[f32; 2]]|</code>.</p>
+<p>Color space is sRGB.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.tri_list_uv_c" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#131-137">source</a><h4 class="code-header">fn <a href="#tymethod.tri_list_uv_c" class="fn">tri_list_uv_c</a>&lt;F&gt;(
+    &amp;mut self,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    texture: &amp;&lt;Self as <a class="trait" href="trait.Graphics.html" title="trait graphics::Graphics">Graphics</a>&gt;::<a class="associatedtype" href="trait.Graphics.html#associatedtype.Texture" title="type graphics::Graphics::Texture">Texture</a>,
+    f: F
+)<span class="where fmt-newline">where
+    F: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;mut dyn <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/ops/function/trait.FnMut.html" title="trait core::ops::function::FnMut">FnMut</a>(&amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">2</a>]], &amp;[[<a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.f32.html">f32</a>; <a class="primitive" href="https://doc.rust-lang.org/1.73.0/std/primitive.array.html">4</a>]])),</span></h4></section></summary><div class="docblock"><p>Same as <code>tri_list_uv</code>, but with individual vertex colors.</p>
+<p>Argument are <code>|vertices: &amp;[[f32; 2], texture_coors: &amp;[[f32; 2]], colors: &amp;[[f32; 4]]]|</code>.</p>
+</div></details></div><h2 id="provided-methods" class="small-section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="method.rectangle" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#145-153">source</a><h4 class="code-header">fn <a href="#method.rectangle" class="fn">rectangle</a>&lt;R: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Rectangle.html" title="type graphics::types::Rectangle">Rectangle</a>&gt;&gt;(
+    &amp;mut self,
+    r: &amp;<a class="struct" href="rectangle/struct.Rectangle.html" title="struct graphics::rectangle::Rectangle">Rectangle</a>,
+    rectangle: R,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws a rectangle.</p>
+<p>Can be overriden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>Rectangle::draw</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.polygon" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#161-169">source</a><h4 class="code-header">fn <a href="#method.polygon" class="fn">polygon</a>(
+    &amp;mut self,
+    p: &amp;<a class="struct" href="polygon/struct.Polygon.html" title="struct graphics::polygon::Polygon">Polygon</a>,
+    polygon: <a class="type" href="types/type.Polygon.html" title="type graphics::types::Polygon">Polygon</a>&lt;'_&gt;,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws a polygon.</p>
+<p>Can be overridden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>Polygon::draw</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.polygon_tween_lerp" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#177-186">source</a><h4 class="code-header">fn <a href="#method.polygon_tween_lerp" class="fn">polygon_tween_lerp</a>(
+    &amp;mut self,
+    p: &amp;<a class="struct" href="polygon/struct.Polygon.html" title="struct graphics::polygon::Polygon">Polygon</a>,
+    polygons: <a class="type" href="types/type.Polygons.html" title="type graphics::types::Polygons">Polygons</a>&lt;'_&gt;,
+    tween_factor: <a class="type" href="math/type.Scalar.html" title="type graphics::math::Scalar">Scalar</a>,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws a tweened polygon using linear interpolation.</p>
+<p>Can be overridden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>Polygon::draw_tween_lerp</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.image" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#194-202">source</a><h4 class="code-header">fn <a href="#method.image" class="fn">image</a>(
+    &amp;mut self,
+    image: &amp;<a class="struct" href="image/struct.Image.html" title="struct graphics::image::Image">Image</a>,
+    texture: &amp;Self::<a class="associatedtype" href="trait.Graphics.html#associatedtype.Texture" title="type graphics::Graphics::Texture">Texture</a>,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws image.</p>
+<p>Can be overridden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>Image::draw</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.ellipse" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#210-218">source</a><h4 class="code-header">fn <a href="#method.ellipse" class="fn">ellipse</a>&lt;R: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Rectangle.html" title="type graphics::types::Rectangle">Rectangle</a>&gt;&gt;(
+    &amp;mut self,
+    e: &amp;<a class="struct" href="ellipse/struct.Ellipse.html" title="struct graphics::ellipse::Ellipse">Ellipse</a>,
+    rectangle: R,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws ellipse.</p>
+<p>Can be overridden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>Ellipse::draw</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.line" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#226-234">source</a><h4 class="code-header">fn <a href="#method.line" class="fn">line</a>&lt;L: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Line.html" title="type graphics::types::Line">Line</a>&gt;&gt;(
+    &amp;mut self,
+    l: &amp;<a class="struct" href="line/struct.Line.html" title="struct graphics::line::Line">Line</a>,
+    line: L,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws line.</p>
+<p>Can be overridden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>Line::draw</code>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.circle_arc" class="method"><a class="src rightside" href="../src/graphics/graphics.rs.html#242-250">source</a><h4 class="code-header">fn <a href="#method.circle_arc" class="fn">circle_arc</a>&lt;R: <a class="trait" href="https://doc.rust-lang.org/1.73.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="type" href="types/type.Rectangle.html" title="type graphics::types::Rectangle">Rectangle</a>&gt;&gt;(
+    &amp;mut self,
+    c: &amp;<a class="struct" href="circle_arc/struct.CircleArc.html" title="struct graphics::circle_arc::CircleArc">CircleArc</a>,
+    rectangle: R,
+    draw_state: &amp;<a class="struct" href="draw_state/struct.DrawState.html" title="struct graphics::draw_state::DrawState">DrawState</a>,
+    transform: <a class="type" href="math/type.Matrix2d.html" title="type graphics::math::Matrix2d">Matrix2d</a>
+)</h4></section></summary><div class="docblock"><p>Draws circle arc.</p>
+<p>Can be overriden in the back-end for higher performance.</p>
+<p>Instead of calling this directly, use <code>CircleArc::draw</code>.</p>
+</div></details></div><h2 id="implementors" class="small-section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../implementors/graphics/graphics/trait.Graphics.js" async></script></section></div></main></body></html>

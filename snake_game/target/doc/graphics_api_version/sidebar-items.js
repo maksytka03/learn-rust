@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DIRECTX","METAL","OPENGL","VULKAN"],"struct":["UnsupportedGraphicsApiError","Version"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"type":["Area","Color","ColorComponent","FontSize","Line","Polygon","Polygons","Radius","Ray","Rectangle","Resolution","SourceRectangle","Triangle","Width"]};

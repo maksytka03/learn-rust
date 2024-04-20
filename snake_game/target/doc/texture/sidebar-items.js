@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Filter","Format","Wrap"],"mod":["ops"],"struct":["TextureSettings"],"trait":["CreateTexture","ImageSize","TextureOp","UpdateTexture"]};
