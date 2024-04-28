@@ -1,3 +1,4 @@
+workspace = { members = ["oop_blog", "snake_game", "zero2prod"] }
 [package]
 name = "rust1"
 version = "0.1.0"

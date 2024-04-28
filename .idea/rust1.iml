@@ -31,8 +31,8 @@
       <sourceFolder url="file://$MODULE_DIR$/workspaces/add/adder/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspaces/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/drop/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/oop_blog/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/snake_game/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/test_1/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/zero2prod/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/zero2prod/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/guessing_game/target" />
@@ -62,7 +62,6 @@
       <excludeFolder url="file://$MODULE_DIR$/workspaces/target" />
       <excludeFolder url="file://$MODULE_DIR$/drop/target" />
       <excludeFolder url="file://$MODULE_DIR$/snake_game/target" />
-      <excludeFolder url="file://$MODULE_DIR$/test_1/target" />
       <excludeFolder url="file://$MODULE_DIR$/zero2prod/target" />
     </content>
     <orderEntry type="inheritedJdk" />
